@@ -2,31 +2,35 @@ import './styles.css';
 
 import createMarkup from './js/update-markup';
 import refs from './js/refs';
-import imageService from './js/image-service';
+import apiService from './js/api-service';
+
+import basicLightbox from 'basiclightbox';
 
 refs.searchForm.addEventListener('submit', event => {
   event.preventDefault();
 
   const form = event.currentTarget;
 
-  imageService.query = form.elements.query.value;
+  apiService.query = form.elements.query.value;
 
   refs.gallery.innerHTML = '';
   form.reset();
 
-  imageService.resetPage();
+  apiService.resetPage();
 
-  loadImages(imageService);
+  loadImages(apiService);
 });
 
 refs.loadMoreButton.addEventListener('click', () => {
-  loadImages(imageService);
+  loadImages(apiService);
 });
 
 async function loadImages(res) {
   try {
     const images = await res.fetchImages();
     const markup = createMarkup(images.hits);
+
+    refs.loadMoreButton.classList.remove('is-hiden');
 
     window.scrollTo({
       top: document.documentElement.offsetHeight,

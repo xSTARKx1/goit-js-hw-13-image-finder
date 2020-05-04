@@ -30,3 +30,7 @@ button {
 .gallery {
   list-style-type: none;
 }
+
+.is-hiden {
+  visibility: hidden;
+}
