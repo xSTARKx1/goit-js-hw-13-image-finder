@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Webpack Starter Kit</title>
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body>
+    <form class="search-form" id="search-form">
+      <input
+        type="text"
+        name="query"
+        autocomplete="off"
+        placeholder="Search images..."
+      />
+      <button type="submit" data-action="submit">Знайти!</button>
+    </form>
+    <ul
+      class="gallery d-flex justify-content-between flex-wrap align-self-start"
+    ></ul>
+    <button
+      type="button"
+      data-action="load-more"
+      class="load-more-button mx-auto"
+    >
+      Завантажити ще!
+    </button>
+    <template>
+      <div class="modal">
+        <p>I'm a modal created from a DOM element/node.</p>
+      </div>
+    </template>
+  </body>
+</html>
