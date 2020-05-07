@@ -3,8 +3,9 @@ import './styles.css';
 import createMarkup from './js/update-markup';
 import refs from './js/refs';
 import apiService from './js/api-service';
+import openModal from './js/modal-window';
 
-import basicLightbox from 'basiclightbox';
+const basicLightbox = require('basiclightbox');
 
 refs.searchForm.addEventListener('submit', event => {
   event.preventDefault();
@@ -40,3 +41,5 @@ async function loadImages(res) {
     throw error;
   }
 }
+
+refs.gallery.addEventListener('click', openModal);
